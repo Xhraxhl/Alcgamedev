@@ -8,12 +8,20 @@ public class CharacterMove : MonoBehaviour {
 	public int MoveSpeed;
 	public float JumpHeight;
 	private bool DoubleJump;
+	public float DropSpeed;
+	private bool FastDrop;
+	private bool WallJump;
+	public float WallJumpHeight;
 
 	//Player grounded variables
 	public Transform GroundCheck;
 	public float GroundCheckRadius;
 	public LayerMask WhatIsGround;
 	private bool Grounded;
+	public Transform WallCheck;
+	public float WallCheckRadius;
+	public LayerMask WhatIsWall;
+	private bool Walled;
 
 	//Non-Stick Player
 	private float MoveVelocity;
@@ -27,6 +35,7 @@ public class CharacterMove : MonoBehaviour {
 	void FixedUpdate () {
 		Grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, WhatIsGround);
 	}
+	
 	
 	// Update is called once per frame
 	void Update () {
@@ -44,9 +53,14 @@ public class CharacterMove : MonoBehaviour {
 			GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
 		}
 
+		//Fast Drop code
+		if(Grounded)
+			FastDrop = false;
 		
-
-
+		if(Input.GetKeyDown (KeyCode.S)&& !FastDrop){
+			Drop();
+			FastDrop = true;
+		}
 
 		//double jump code
 		if(Grounded)
@@ -56,8 +70,22 @@ public class CharacterMove : MonoBehaviour {
 			Jump();
 			DoubleJump = true;
 		}
+		//Wall jump code??
+		if(Grounded)
+			WallJump = false;
+			
+		if(Input.GetKeyDown (KeyCode.Space)&& !WallJump && !Walled){
+			JumpWall();
+			WallJump = true;
+		}
 	}
 	public void Jump(){
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, JumpHeight);
+	}
+	public void Drop(){
+		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, DropSpeed);
+	}
+	public void JumpWall(){
+		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, WallJumpHeight);
 	}
 }
