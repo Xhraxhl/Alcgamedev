@@ -10,10 +10,10 @@ public class CharacterMove : MonoBehaviour {
 	private bool DoubleJump;
 	public float DropSpeed;
 	private bool FastDrop;
-	private bool WallJump;
-	public float WallJumpHeight;
+	public float ClimbSpeed;
+	private bool WallClimb;
 
-	//Player grounded variables
+	//Player ground / wall variables
 	public Transform GroundCheck;
 	public float GroundCheckRadius;
 	public LayerMask WhatIsGround;
@@ -23,9 +23,9 @@ public class CharacterMove : MonoBehaviour {
 	public LayerMask WhatIsWall;
 	private bool Walled;
 
-	//Non-Stick Player
+	//Non-Slide Player
 	private float MoveVelocity;
-	// Jump function code
+
 	
 
 	// Use this for initialization
@@ -34,6 +34,7 @@ public class CharacterMove : MonoBehaviour {
 
 	void FixedUpdate () {
 		Grounded = Physics2D.OverlapCircle(GroundCheck.position, GroundCheckRadius, WhatIsGround);
+		Walled = Physics2D.OverlapCircle(WallCheck.position, WallCheckRadius, WhatIsWall);
 	}
 	
 	
@@ -46,11 +47,15 @@ public class CharacterMove : MonoBehaviour {
 
 		//move side to side code
 		//Code makes character move side to side with A and D keys
-		if(Input.GetKey (KeyCode.D)){
-			GetComponent<Rigidbody2D>().velocity = new Vector2(+MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+		if(Input.GetKey (KeyCode.D))
+			MoveVelocity = -MoveSpeed;
+		{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(+MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 		}
-		if(Input.GetKey (KeyCode.A)){
-			GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveSpeed, GetComponent<Rigidbody2D>().velocity.y);
+		if(Input.GetKey (KeyCode.A))
+			MoveVelocity = MoveSpeed;
+		{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 		}
 
 		//Fast Drop code
@@ -62,6 +67,9 @@ public class CharacterMove : MonoBehaviour {
 			FastDrop = true;
 		}
 
+		//Anti-slide
+		MoveVelocity = 0f;
+
 		//double jump code
 		if(Grounded)
 			DoubleJump = false;
@@ -70,14 +78,12 @@ public class CharacterMove : MonoBehaviour {
 			Jump();
 			DoubleJump = true;
 		}
-		//Wall jump code??
-		if(Grounded)
-			WallJump = false;
-			
-		if(Input.GetKeyDown (KeyCode.Space)&& !WallJump && !Walled){
-			JumpWall();
-			WallJump = true;
+		//Wall climb code??
+		if(Input.GetKey (KeyCode.W)&& Walled){
+				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, ClimbSpeed);
+			WallClimb = true;
 		}
+		
 	}
 	public void Jump(){
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, JumpHeight);
@@ -85,7 +91,5 @@ public class CharacterMove : MonoBehaviour {
 	public void Drop(){
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, DropSpeed);
 	}
-	public void JumpWall(){
-		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, WallJumpHeight);
-	}
+	
 }

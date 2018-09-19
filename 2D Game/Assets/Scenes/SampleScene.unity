@@ -306,13 +306,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 41008504}
-  m_LocalRotation: {x: -0, y: -0, z: -0.6922089, w: 0.7216972}
+  m_LocalRotation: {x: 0, y: 0, z: 0.7132504, w: 0.7009094}
   m_LocalPosition: {x: -23.97, y: 1.28, z: -0.10742125}
   m_LocalScale: {x: 83.21319, y: 3.5152562, z: 5}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -87.61}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 91}
 --- !u!1 &349404933
 GameObject:
   m_ObjectHideFlags: 0
@@ -412,6 +412,34 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &354341233
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 354341234}
+  m_Layer: 0
+  m_Name: WallCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 6519382022992737161, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &354341234
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 354341233}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.007, y: -0.005, z: 0}
+  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_Children: []
+  m_Father: {fileID: 890674799}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &375989761
 GameObject:
@@ -684,7 +712,7 @@ Transform:
   m_LocalScale: {x: 0.2, y: 0.19355439, z: 1}
   m_Children: []
   m_Father: {fileID: 890674799}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &639246120
 GameObject:
@@ -917,8 +945,8 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_LinearDrag: 0.2
+  m_AngularDrag: 0.2
   m_GravityScale: 0.7
   m_Material: {fileID: 0}
   m_Interpolate: 0
@@ -980,6 +1008,7 @@ Transform:
   m_LocalPosition: {x: -4.87, y: -0.935, z: 0.19804347}
   m_LocalScale: {x: 5, y: 5.166507, z: 1}
   m_Children:
+  - {fileID: 354341234}
   - {fileID: 1985258551}
   - {fileID: 519420032}
   m_Father: {fileID: 0}
@@ -1008,7 +1037,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.2, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &890674801
 MonoBehaviour:
@@ -1024,17 +1053,17 @@ MonoBehaviour:
   MoveSpeed: 5
   JumpHeight: 5
   DropSpeed: -30
-  WallJumpHeight: 5
+  ClimbSpeed: 10
   GroundCheck: {fileID: 1985258551}
-  GroundCheckRadius: 0.2
+  GroundCheckRadius: 0.5
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
-  WallCheck: {fileID: 0}
-  WallCheckRadius: 0
+  WallCheck: {fileID: 354341234}
+  WallCheckRadius: 2
   WhatIsWall:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 512
 --- !u!1 &1423889474
 GameObject:
   m_ObjectHideFlags: 0
@@ -1261,5 +1290,5 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 890674799}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
