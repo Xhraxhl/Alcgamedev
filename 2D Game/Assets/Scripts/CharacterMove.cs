@@ -12,7 +12,8 @@ public class CharacterMove : MonoBehaviour {
 	private bool FastDrop;
 	public float ClimbSpeed;
 	private bool WallClimb;
-
+	private float MoveVelocity;
+	public float SprintSpeed;
 	//Player ground / wall variables
 	public Transform GroundCheck;
 	public float GroundCheckRadius;
@@ -24,7 +25,7 @@ public class CharacterMove : MonoBehaviour {
 	private bool Walled;
 
 	//Non-Slide Player
-	private float MoveVelocity;
+
 
 	
 
@@ -78,7 +79,7 @@ public class CharacterMove : MonoBehaviour {
 			Jump();
 			DoubleJump = true;
 		}
-		//Wall climb code??
+		//Wall climb code
 		if(Input.GetKey (KeyCode.W)&& Walled){
 				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, ClimbSpeed);
 			WallClimb = true;
