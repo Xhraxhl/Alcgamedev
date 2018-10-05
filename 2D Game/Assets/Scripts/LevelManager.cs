@@ -37,7 +37,7 @@ public class LevelManager : MonoBehaviour {
 		// Point Penalty
 		ScoreManager.AddPoints(-PointPenaltyOnDeath);
 		// Debug message
-		Debug.Log ("Pc Respawn");
+		Debug.Log ("PC Respawn");
 		// Respawn Delay
 		yield return new WaitForSeconds (RespawnDelay);
 		// Gravity Restore
