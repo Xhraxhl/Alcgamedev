@@ -45,10 +45,12 @@ public class CharacterMove : MonoBehaviour {
 		if(Input.GetKeyDown (KeyCode.Space)&& Grounded){
 			Jump();
 		}	
-
+		if(Input.GetKeyDown (KeyCode.UpArrow)&& Grounded){
+			Jump();
+		}	
 		//move side to side code
 		//Code makes character move side to side with A and D keys
-		if(Input.GetKey (KeyCode.D))
+		if (Input.GetKey (KeyCode.D))
 			MoveVelocity = -MoveSpeed;
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(+MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
@@ -58,7 +60,16 @@ public class CharacterMove : MonoBehaviour {
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 		}
-
+		if (Input.GetKey (KeyCode.RightArrow))
+			MoveVelocity = -MoveSpeed;
+		{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(+MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+		}
+		if(Input.GetKey (KeyCode.LeftArrow))
+			MoveVelocity = MoveSpeed;
+		{
+			GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+		}
 		//Fast Drop code
 		if(Grounded)
 			FastDrop = false;
@@ -67,7 +78,10 @@ public class CharacterMove : MonoBehaviour {
 			Drop();
 			FastDrop = true;
 		}
-
+		if(Input.GetKeyDown (KeyCode.DownArrow)&& !FastDrop){
+			Drop();
+			FastDrop = true;
+		}
 		//Anti-slide
 		MoveVelocity = 0f;
 
@@ -79,12 +93,19 @@ public class CharacterMove : MonoBehaviour {
 			Jump();
 			DoubleJump = true;
 		}
+		if(Input.GetKey (KeyCode.UpArrow)&& !DoubleJump && !Grounded){
+			Jump();
+			DoubleJump = true;
+		}
 		//Wall climb code
 		if(Input.GetKey (KeyCode.W)&& Walled){
 				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, ClimbSpeed);
 			WallClimb = true;
 		}
-		
+		if(Input.GetKey (KeyCode.LeftShift)&& Walled){
+				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, ClimbSpeed);
+			WallClimb = true;
+		}		
 	}
 	public void Jump(){
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, JumpHeight);

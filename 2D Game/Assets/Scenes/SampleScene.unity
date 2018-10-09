@@ -1387,7 +1387,7 @@ MonoBehaviour:
   ClimbSpeed: 10
   SprintSpeed: 10
   GroundCheck: {fileID: 1985258551}
-  GroundCheckRadius: 0.5
+  GroundCheckRadius: 1
   WhatIsGround:
     serializedVersion: 2
     m_Bits: 256
@@ -1408,6 +1408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   CurrentCheckPoint: {fileID: 1582407516}
+  PC: {fileID: 890674797}
   DeathParticle: {fileID: 1900004724336212, guid: f2da73eeae8ff414aa4b10d3d23c9f37,
     type: 2}
   RespawnParticle: {fileID: 1648573142345402, guid: bb1949a6444eb47ad83c49bb08976b7a,
@@ -1843,8 +1844,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1615430833}
   - component: {fileID: 1615430832}
-  - component: {fileID: 1615430831}
   - component: {fileID: 1615430835}
+  - component: {fileID: 1615430831}
   - component: {fileID: 1615430830}
   - component: {fileID: 1615430829}
   - component: {fileID: 1615430834}
@@ -2026,6 +2027,7 @@ GameObject:
   - component: {fileID: 1676921744}
   - component: {fileID: 1676921746}
   - component: {fileID: 1676921745}
+  - component: {fileID: 1676921747}
   m_Layer: 0
   m_Name: DeathBox
   m_TagString: Untagged
@@ -2082,6 +2084,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 100, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1676921747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1676921743}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1a9bc369e557248a2a5c8995492d37a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  LevelManager: {fileID: 890674803}
 --- !u!1 &1882102050
 GameObject:
   m_ObjectHideFlags: 0
@@ -2303,7 +2317,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!224 &1932573069
 RectTransform:
