@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour {
+
 	public Transform FirePoint;
 	public GameObject Projectile;
 	void Start () {
@@ -10,8 +11,8 @@ public class PlayerShoot : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void Update () {
-	//	if(Input.GetKeyDown(KeyCode.Q))
-			Instantiate(Projectile,FirePoint.position, FirePoint.rotation);
+		if(Input.GetKey(KeyCode.Q))
+				Instantiate(Projectile,FirePoint.position, FirePoint.rotation);
 
 	}
 }
