@@ -25,6 +25,10 @@ public class Projectile : MonoBehaviour {
 			Destroy (other.gameObject);
 			ScoreManager.AddPoints (PointsPerKill);
 		}
+			else if(other.tag == "Terrain"){
+				Instantiate(ProjectileParticles, transform.position, transform.rotation);
+				Destroy (gameObject);
+		}
 		Instantiate(ProjectileParticles, transform.position, transform.rotation);
 		Destroy (gameObject);
 	}
