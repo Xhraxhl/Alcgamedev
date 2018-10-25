@@ -20,15 +20,15 @@ public class Projectile : MonoBehaviour {
 		GetComponent<Rigidbody2D>().velocity = new Vector2(Speed, GetComponent<Rigidbody2D>().velocity.y);	
 	}
 	void OnTriggerEnter2D(Collider2D other){
+		if(other.tag == "Terrain"){
+				Destroy (gameObject);
+		}
 		if(other.tag == "Enemy"){
 			Instantiate(EnemyDeathParticles, other.transform.position, other.transform.rotation);
 			Destroy (other.gameObject);
 			ScoreManager.AddPoints (PointsPerKill);
-		}
-			else if(other.tag == "Terrain"){
-				Instantiate(ProjectileParticles, transform.position, transform.rotation);
-				Destroy (gameObject);
-		}
+		} 
+
 		Instantiate(ProjectileParticles, transform.position, transform.rotation);
 		Destroy (gameObject);
 	}
