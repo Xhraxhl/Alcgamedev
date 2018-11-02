@@ -6716,7 +6716,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0, g: 0, b: 0, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -29329,7 +29329,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1615430828
 GameObject:
@@ -40109,33 +40109,13 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4503388062503956, guid: 14b5d28bbfcb54c828bfd5a9a9aa3b8c, type: 2}
       propertyPath: m_RootOrder
-      value: 11
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 114611466561625540, guid: 14b5d28bbfcb54c828bfd5a9a9aa3b8c,
         type: 2}
       propertyPath: PC
       value: 
       objectReference: {fileID: 890674797}
-    - target: {fileID: 50325592208890542, guid: 14b5d28bbfcb54c828bfd5a9a9aa3b8c,
-        type: 2}
-      propertyPath: m_GravityScale
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114611466561625540, guid: 14b5d28bbfcb54c828bfd5a9a9aa3b8c,
-        type: 2}
-      propertyPath: Speed
-      value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 50325592208890542, guid: 14b5d28bbfcb54c828bfd5a9a9aa3b8c,
-        type: 2}
-      propertyPath: m_AngularDrag
-      value: 0.05
-      objectReference: {fileID: 0}
-    - target: {fileID: 114611466561625540, guid: 14b5d28bbfcb54c828bfd5a9a9aa3b8c,
-        type: 2}
-      propertyPath: ProjectileParticles
-      value: 
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 14b5d28bbfcb54c828bfd5a9a9aa3b8c, type: 2}
   m_IsPrefabParent: 0

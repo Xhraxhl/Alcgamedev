@@ -37,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1244179453873572}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -19.35, y: -33.6, z: 0}
   m_LocalScale: {x: 1.5, y: 0.75, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -57,7 +57,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0.02
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -89,11 +89,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd46268c5cda54fa8b2cd193f1c6ebad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 20
+  Speed: 30
   PC: {fileID: 0}
   EnemyDeathParticles: {fileID: 1900004724336212, guid: f2da73eeae8ff414aa4b10d3d23c9f37,
     type: 2}
-  ProjectileParticles: {fileID: 1648573142345402, guid: bb1949a6444eb47ad83c49bb08976b7a,
+  ProjectileParticles: {fileID: 0}
+  ImpactParticles: {fileID: 1768875653313626, guid: 25cfcc6e440e644828ecb643e2867b04,
     type: 2}
   PointsPerKill: 20
 --- !u!212 &212803088276025398

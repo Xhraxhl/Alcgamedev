@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour {
 	public Rigidbody2D PC;
 	public GameObject EnemyDeathParticles;
 	public GameObject ProjectileParticles;
+	public GameObject ImpactParticles;
 	public int PointsPerKill;
 
 	// Use this for initialization
@@ -21,6 +22,7 @@ public class Projectile : MonoBehaviour {
 	}
 	void OnTriggerEnter2D(Collider2D other){
 		if(other.tag == "Terrain"){
+				Instantiate(ImpactParticles, transform.position, transform.rotation);
 				Destroy (gameObject);
 		}
 		if(other.tag == "Enemy"){
