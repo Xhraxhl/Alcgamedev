@@ -48,6 +48,7 @@ public class CharacterMove : MonoBehaviour {
 		if(Input.GetKeyDown (KeyCode.UpArrow)&& Grounded){
 			Jump();
 		}	
+		
 		//move side to side code
 		//Code makes character move side to side with A and D keys
 		if (Input.GetKey (KeyCode.D))

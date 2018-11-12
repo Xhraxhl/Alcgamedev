@@ -4,6 +4,7 @@ TextureImporter:
   fileIDToRecycleName:
     21300000: Bot1
     21300002: EnemyA
+    21300004: EnemyB
   externalObjects: {}
   serializedVersion: 5
   mipmaps:
@@ -112,13 +113,33 @@ TextureImporter:
         width: 32
         height: 33
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: b55eb95c9281446d8bd05e89cafb33c2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EnemyB
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 101
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64fdba088f69d454a8e96b7c78c1f072
       vertices: []
       indices: 
       edges: []
