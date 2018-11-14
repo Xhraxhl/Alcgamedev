@@ -57,7 +57,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -90,10 +90,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Speed: 30
+  TimeOut: 7
   PC: {fileID: 0}
   EnemyDeathParticles: {fileID: 1900004724336212, guid: f2da73eeae8ff414aa4b10d3d23c9f37,
     type: 2}
-  ProjectileParticles: {fileID: 0}
+  ProjectileParticles: {fileID: 1768875653313626, guid: 25cfcc6e440e644828ecb643e2867b04,
+    type: 2}
   ImpactParticles: {fileID: 1768875653313626, guid: 25cfcc6e440e644828ecb643e2867b04,
     type: 2}
   PointsPerKill: 20
@@ -132,8 +134,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
-  m_Color: {r: 0.20038268, g: 0.49177483, b: 0.5377358, a: 1}
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 0, b: 0.030630589, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
