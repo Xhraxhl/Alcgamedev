@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4374268704686314}
   - component: {fileID: 198824393686107602}
   - component: {fileID: 199612389595870010}
+  - component: {fileID: 114762543384813110}
   m_Layer: 0
   m_Name: Impact
   m_TagString: Untagged
@@ -41,6 +42,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
+--- !u!114 &114762543384813110
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1768875653313626}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e2585d6619fd412eb142f5514c1d935, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198824393686107602
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -227,7 +239,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 1, g: 1, b: 1, a: 1}
+      maxColor: {r: 0.9528302, g: 0.6111738, b: 0, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
