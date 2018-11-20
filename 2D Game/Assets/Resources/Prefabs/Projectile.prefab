@@ -91,7 +91,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Speed: 35
   TimeOut: 2
-  PC: {fileID: 0}
+  PC: {fileID: 1025308668603880, guid: 091c1d8f0657e4378a021c0d93c55de4, type: 2}
   EnemyDeathParticles: {fileID: 1900004724336212, guid: f2da73eeae8ff414aa4b10d3d23c9f37,
     type: 2}
   ProjectileParticles: {fileID: 1768875653313626, guid: 25cfcc6e440e644828ecb643e2867b04,

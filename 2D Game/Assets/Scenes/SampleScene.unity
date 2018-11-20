@@ -61627,7 +61627,7 @@ Prefab:
         type: 2}
     - target: {fileID: 4464805923721870, guid: 091c1d8f0657e4378a021c0d93c55de4, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.167
+      value: 0.151
       objectReference: {fileID: 0}
     - target: {fileID: 96577559639251886, guid: 091c1d8f0657e4378a021c0d93c55de4,
         type: 2}
@@ -61648,6 +61648,16 @@ Prefab:
         type: 2}
       propertyPath: m_Parameters.colorGradient.ctime0
       value: 26407
+      objectReference: {fileID: 0}
+    - target: {fileID: 61304530252508704, guid: 091c1d8f0657e4378a021c0d93c55de4,
+        type: 2}
+      propertyPath: m_Size.x
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 61304530252508704, guid: 091c1d8f0657e4378a021c0d93c55de4,
+        type: 2}
+      propertyPath: m_Size.y
+      value: 0.3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 091c1d8f0657e4378a021c0d93c55de4, type: 2}
