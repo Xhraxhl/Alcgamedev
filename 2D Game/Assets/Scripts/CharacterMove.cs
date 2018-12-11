@@ -12,6 +12,7 @@ public class CharacterMove : MonoBehaviour {
 	private bool FastDrop;
 	public float ClimbSpeed;
 	private bool WallClimb;
+	public Animator animator;
 	private float MoveVelocity;
 	public float SprintSpeed;
 	//Player ground / wall variables
@@ -31,6 +32,8 @@ public class CharacterMove : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+		animator.SetBool("IsWalking",false);
+		animator.SetBool("IsJumping",false);
 	}
 
 	void FixedUpdate () {
@@ -52,14 +55,23 @@ public class CharacterMove : MonoBehaviour {
 		//move side to side code
 		//Code makes character move side to side with A and D keys
 		if (Input.GetKey (KeyCode.D))
-			MoveVelocity = -MoveSpeed;
+			MoveVelocity = -1 * MoveSpeed;
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(+MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+			animator.SetBool("IsWalking",true);
+		}
+
+		else if(Input.GetKey (KeyCode.D)){
+			animator.SetBool("IsWalking",false);
 		}
 		if(Input.GetKey (KeyCode.A))
 			MoveVelocity = MoveSpeed;
 		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+			animator.SetBool("IsWalking",true);
+		}
+		else if(Input.GetKey (KeyCode.A)){
+			animator.SetBool("IsWalking",false);
 		}
 		if (Input.GetKey (KeyCode.RightArrow))
 			MoveVelocity = -MoveSpeed;
@@ -87,9 +99,10 @@ public class CharacterMove : MonoBehaviour {
 		MoveVelocity = 0f;
 
 		//double jump code
-		if(Grounded)
+		if(Grounded){
 			DoubleJump = false;
-
+			animator.SetBool("IsJumping",false);
+		}
 		if(Input.GetKeyDown (KeyCode.Space)&& !DoubleJump && !Grounded){
 			Jump();
 			DoubleJump = true;
@@ -116,6 +129,7 @@ public class CharacterMove : MonoBehaviour {
 	}
 	public void Jump(){
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, JumpHeight);
+		animator.SetBool("IsJumping",true);
 	}
 	public void Drop(){
 		GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, DropSpeed);
