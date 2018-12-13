@@ -54,35 +54,24 @@ public class CharacterMove : MonoBehaviour {
 		
 		//move side to side code
 		//Code makes character move side to side with A and D keys
-		if (Input.GetKey (KeyCode.D))
-			MoveVelocity = -1 * MoveSpeed;
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(+MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+		if (Input.GetKey (KeyCode.D)){
+			MoveVelocity = -MoveSpeed;
 			animator.SetBool("IsWalking",true);
 		}
 
-		else if(Input.GetKey (KeyCode.D)){
+		else if(Input.GetKeyUp (KeyCode.D)){
 			animator.SetBool("IsWalking",false);
 		}
-		if(Input.GetKey (KeyCode.A))
+				GetComponent<Rigidbody2D>().velocity = new Vector2(+MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
+		if(Input.GetKey (KeyCode.A)){
 			MoveVelocity = MoveSpeed;
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
 			animator.SetBool("IsWalking",true);
 		}
-		else if(Input.GetKey (KeyCode.A)){
+		else if(Input.GetKeyUp (KeyCode.A)){
 			animator.SetBool("IsWalking",false);
 		}
-		if (Input.GetKey (KeyCode.RightArrow))
-			MoveVelocity = -MoveSpeed;
-		{
-			GetComponent<Rigidbody2D>().velocity = new Vector2(+MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
-		}
-		if(Input.GetKey (KeyCode.LeftArrow))
-			MoveVelocity = MoveSpeed;
-		{
 			GetComponent<Rigidbody2D>().velocity = new Vector2(-MoveVelocity, GetComponent<Rigidbody2D>().velocity.y);
-		}
+
 		//Fast Drop code
 		if(Grounded)
 			FastDrop = false;
@@ -91,10 +80,7 @@ public class CharacterMove : MonoBehaviour {
 			Drop();
 			FastDrop = true;
 		}
-		if(Input.GetKeyDown (KeyCode.DownArrow)&& !FastDrop){
-			Drop();
-			FastDrop = true;
-		}
+
 		//Anti-slide
 		MoveVelocity = 0f;
 
@@ -107,19 +93,16 @@ public class CharacterMove : MonoBehaviour {
 			Jump();
 			DoubleJump = true;
 		}
-		if(Input.GetKey (KeyCode.UpArrow)&& !DoubleJump && !Grounded){
-			Jump();
-			DoubleJump = true;
-		}
+
 		//Wall climb code
-		if(Input.GetKey (KeyCode.W)&& Walled){
-				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, ClimbSpeed);
-			WallClimb = true;
-		}
-		if(Input.GetKey (KeyCode.LeftShift)&& Walled){
-				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, ClimbSpeed);
-			WallClimb = true;
-		}		
+//		if(Input.GetKey (KeyCode.W)&& Walled){
+//				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, ClimbSpeed);
+//			WallClimb = true;
+//		}
+//		if(Input.GetKey (KeyCode.LeftShift)&& Walled){
+//				GetComponent<Rigidbody2D>().velocity = new Vector2(GetComponent<Rigidbody2D>().velocity.x, ClimbSpeed);
+//			WallClimb = true;
+//		}		
 		// Player flip
 		if (GetComponent<Rigidbody2D>().velocity.x > 0)
 			transform.localScale = new Vector3(3f,3f,1f);

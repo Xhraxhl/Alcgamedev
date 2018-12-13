@@ -24,6 +24,8 @@ GameObject:
   - component: {fileID: 50532294965510754}
   - component: {fileID: 114727657405586290}
   - component: {fileID: 114594203670610206}
+  - component: {fileID: 95223143070406130}
+  - component: {fileID: 114638332235516932}
   m_Layer: 0
   m_Name: PC
   m_TagString: Untagged
@@ -57,6 +59,21 @@ GameObject:
   - component: {fileID: 4426024960852618}
   m_Layer: 0
   m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1567149080532158
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4820237760917118}
+  m_Layer: 0
+  m_Name: MeleePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -125,11 +142,24 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1634505748093540}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.129, y: -0.056, z: 0}
+  m_LocalPosition: {x: 0.162, y: -0.056, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4860990403030992}
   m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4820237760917118
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1567149080532158}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.169, y: -0.056, z: -0.78526354}
+  m_LocalScale: {x: 0.33333334, y: 0.33333334, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4860990403030992}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4860990403030992
 Transform:
@@ -138,13 +168,14 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1025308668603880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.45, y: 9.01, z: 0.19804347}
+  m_LocalPosition: {x: -4.9, y: 1.47, z: 0.19804347}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children:
   - {fileID: 4240166998328776}
   - {fileID: 4954561507352342}
   - {fileID: 4426024960852618}
   - {fileID: 4464805923721870}
+  - {fileID: 4820237760917118}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -204,8 +235,26 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.3, y: 0.31}
+  m_Size: {x: 0.1, y: 0.3}
   m_EdgeRadius: 0
+--- !u!95 &95223143070406130
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1025308668603880}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a49b15192ac024525b3ac0f29987af7d, type: 2}
+  m_CullingMode: 1
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!96 &96577559639251886
 TrailRenderer:
   serializedVersion: 2
@@ -241,7 +290,7 @@ TrailRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_Time: 0.4
   m_Parameters:
     serializedVersion: 2
@@ -263,7 +312,7 @@ TrailRenderer:
       m_RotationOrder: 4
     colorGradient:
       serializedVersion: 2
-      key0: {r: 0.4039216, g: 0.7960785, b: 0.6745098, a: 1}
+      key0: {r: 0.7600002, g: 0, b: 1, a: 1}
       key1: {r: 1, g: 1, b: 1, a: 0}
       key2: {r: 0, g: 0, b: 0, a: 0}
       key3: {r: 0, g: 0, b: 0, a: 0}
@@ -271,7 +320,7 @@ TrailRenderer:
       key5: {r: 0, g: 0, b: 0, a: 0}
       key6: {r: 0, g: 0, b: 0, a: 0}
       key7: {r: 0, g: 0, b: 0, a: 0}
-      ctime0: 18504
+      ctime0: 26407
       ctime1: 65535
       ctime2: 0
       ctime3: 0
@@ -309,7 +358,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FirePoint: {fileID: 4464805923721870}
-  Projectile: {fileID: 0}
+  Projectile: {fileID: 1244179453873572, guid: 14b5d28bbfcb54c828bfd5a9a9aa3b8c, type: 2}
+--- !u!114 &114638332235516932
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1025308668603880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7523a1d8a006941588947255974e18a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  FirePoint: {fileID: 4820237760917118}
+  Lazar: {fileID: 1090658335023508, guid: 786d07489102149aab3bb476a98b0274, type: 2}
 --- !u!114 &114727657405586290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -325,6 +387,7 @@ MonoBehaviour:
   JumpHeight: 10
   DropSpeed: -30
   ClimbSpeed: 10
+  animator: {fileID: 95223143070406130}
   SprintSpeed: 10
   GroundCheck: {fileID: 4426024960852618}
   GroundCheckRadius: 1
